@@ -11,8 +11,8 @@
         "vhost": {{ .RABBITMQ_VHOST | quote }},
         "prefetch": {{ .RABBITMQ_PREFETCH }} {{ if eq .RABBITMQ_SSL_SUPPORT "true" }},
           "ssl" : {
-            "cert_chain_file": "/etc/sensu/ssl/cert.pem",
-            "private_key_file": "/etc/sensu/ssl/key.pem"
+            "cert_chain_file": "{{ .RABBITMQ_SSL_CERT }}",
+            "private_key_file": "{{ .RABBITMQ_SSL_KEY }}"
           } {{ end }}
     } {{ end }}
 }

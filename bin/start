@@ -56,9 +56,9 @@ case "$SENSU_SERVICE" in
         exit 1
       fi
 
-      mkdir -p /etc/sensu/ssl
-      echo -e "${RABBITMQ_SSL_CERT}" > /etc/sensu/ssl/cert.pem
-      echo -e "${RABBITMQ_SSL_KEY}" > /etc/sensu/ssl/key.pem
+      #mkdir -p /etc/sensu/ssl
+      #echo -e "${RABBITMQ_SSL_CERT}" > /etc/sensu/ssl/cert.pem
+      #echo -e "${RABBITMQ_SSL_KEY}" > /etc/sensu/ssl/key.pem
     fi
 
     # use host (not container) dirs for checks and metrics
