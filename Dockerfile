@@ -76,7 +76,8 @@ ENV DEFAULT_PLUGINS_REPO=sensu-plugins \
 
 RUN mkdir -p $CONFIG_DIR $CHECK_DIR $EXTENSION_DIR $PLUGINS_DIR $HANDLERS_DIR
 
-RUN /bin/install mailer@1.0.0 slack@1.0.0 sensu@1.0.0
+RUN /bin/install mailer@1.0.0 slack@1.0.0 
+RUN sensu-install -p github,slack,mailer,sensu
 
 EXPOSE 4567
 VOLUME ["/etc/sensu/conf.d"]
