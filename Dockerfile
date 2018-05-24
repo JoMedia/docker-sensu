@@ -1,7 +1,7 @@
 FROM debian:jessie-slim
 MAINTAINER Shane Starcher <shanestarcher@gmail.com>
 
-ENV SENSU_VERSION=0.29.0-7
+ENV SENSU_VERSION=1.4.2-1
 
 
 RUN \
@@ -18,7 +18,7 @@ RUN \
 ENV PATH /opt/sensu/embedded/bin:$PATH
 RUN gem install --no-document yaml2json
 
-ENV DUMB_INIT_VERSION=1.2.0
+ENV DUMB_INIT_VERSION=1.2.1
 RUN \
     curl -Ls https://github.com/Yelp/dumb-init/releases/download/v${DUMB_INIT_VERSION}/dumb-init_${DUMB_INIT_VERSION}_amd64.deb > dumb-init.deb &&\
     dpkg -i dumb-init.deb &&\
